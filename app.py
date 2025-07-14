@@ -1,5 +1,5 @@
 from flask import Flask
-
+# pip install flask 설치 명령어
 app = Flask(__name__)
 
 @app.route('/')

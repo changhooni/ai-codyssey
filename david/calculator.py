@@ -18,11 +18,11 @@ operator2 = input('계산할 숫자를 입력하세요 : ')
 a = int(input('첫번째 숫자를 입력하세요 : '))    
 operator = input('연산자를 입력하세요 : ')
 b = int(input('두번째 숫자를 입력하세요 : '))
-# eval() 함수를 사용하여 한줄 연산하기
 
 # 결과 값 받기
 result = 0
 
+# eval() 함수를 사용하여 한줄 연산하기
 try:
     result = eval(operator2)
     print(f"Result : {result}")
