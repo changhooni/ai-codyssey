@@ -14,7 +14,6 @@ def multiply(a, b):
 def divide(a, b):
     return a / b
 
-operator2 = input('계산할 숫자를 입력하세요 : ')
 a = int(input('첫번째 숫자를 입력하세요 : '))    
 operator = input('연산자를 입력하세요 : ')
 b = int(input('두번째 숫자를 입력하세요 : '))
@@ -23,15 +22,6 @@ b = int(input('두번째 숫자를 입력하세요 : '))
 result = 0
 
 def main():
-    # eval() 함수를 사용하여 한줄 연산하기
-    try:
-        result = eval(operator2)
-        print(f"Result : {result}")
-    except (SyntaxError, NameError):
-        print("Invalid operator.")
-    except Exception as e:
-        print("Error :", e)
-
     if operator == '+':
         result = add(a, b)
     elif operator == '-':
@@ -47,7 +37,7 @@ def main():
         result = 'Error : Division by zero.'
     else:
         result = 'Invalid operator.'
-    #print(f"Result : {result}")
+    print(f"Result : {result}")
 
 if __name__ == '__main__':
     main()
