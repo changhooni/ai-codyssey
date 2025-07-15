@@ -14,12 +14,12 @@ def multiply(a, b):
 def divide(a, b):
     return a / b
 
-operator2 = input('계산할 숫자를 입력하세요 : ')
+operator = input('계산할 숫자를 입력하세요 : ')
 
 def main():
     # eval() 함수를 사용하여 한줄 연산하기
     try:
-        result = eval(operator2)
+        result = eval(operator)
         print(f"Result : {result}")
     except (SyntaxError, NameError):
         print("Invalid operator.")
