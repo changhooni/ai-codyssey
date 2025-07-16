@@ -1,4 +1,5 @@
 def hello(): #함수 지정
-    print('Hello')
+   return "Hello"
 
-hello() #함수 불러오기
+print(hello()) #함수 불러오기
+    
