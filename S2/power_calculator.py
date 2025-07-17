@@ -2,12 +2,26 @@ from flask import Flask
 
 app = Flask(__name__)
 
-def is_integer_try(x):
+def is_float_try(x):
+    try:
+        float(x)
+        return True
+    except ValueError:
+        raise ValueError("Invalid number input.")
+    
+def is_int_try(x):
     try:
         int(x)
         return True
     except ValueError:
-        return False
+        raise ValueError("Invalid exponent input.")
+
+def power_with_positive(base, exponent):
+    kk = 1
+    for _ in range(exponent):
+        #print(f'squared_number1 : {result}')
+        kk *= is_int_try(base)
+    return kk
 
 def main():
     try:
@@ -15,23 +29,49 @@ def main():
         #print(f'{input_number}')
         #def power(base, exponent):
         input_number = int(input('제곱을 구할 값을 입력하세요 : '))
-        power_number = input('몇 제곱 값을 입력하세요 : ')
+        power_number = int(input('몇 제곱 값을 입력하세요 : '))
 
-        if is_integer_try(power_number):
+        if is_float_try(power_number):
+            result = 1
             #print(input_number, '의', power_number, '제곱 = ', math.pow(input_number, power_number)) # math.pow() 함수를 사용하여 처리 방법
             #squared_number = power(input_number, power_number)
-            result = 1
+            if is_int_try(input_number) == 0:
+                raise ZeroDivisionError("Zero division error")
+            
+            if power_number > 0:
+                print('22')
+                result = power_with_positive(input_number, power_number)  
+                return print(f"Result1 : {result}")
+            else:  
+                print('11')  
+                result = 1 / power_with_positive(input_number, -power_number)
+                return print(f"Result2 : {result}")
+            
             # for문에 _는 변수 값이 필요 없을 때 사용한다
-            for _ in range(int(power_number)):
-                #print(f'squared_number1 : {result}')
-                result *= int(input_number)
-            print(f'Result : {result}')
+            #if int(power_number) < 0:
+            #    i = 0
+            #    while i < power_number:
+            #        result /= float(input_number)
+            #        i += 1
+                #tmp_list = [1, 2, 3, 4]
+                #for n in tmp_list:
+                #    result /= float(input_number)
+                    #print(f'squared_number1 : {result}')
+            #else:
+            #    for _ in range(int(power_number)):
+                    #print(f'squared_number1 : {result}')
+            #        result *= float(input_number)
         else:            
             print("Invalid exponent input.")
         #result = eval(operator2)
         #print(f"Result : {result}")
-    except Exception as e:
-        print("Invalid number input.")
+    except ValueError as e:
+        print(e)
+
+    #except ZeroDivisionError:
+    #    print("zero division error")
+
+    #except Exception
 
 
 #input_number = int(input('제곱을 구할 값을 입력하세요 : '))
