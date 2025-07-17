@@ -46,6 +46,12 @@ git config --global user-email "사용자 이메일"
 git 기본 브랜치명 변경
 git config --global init.defaultBranch 명칭
 
+git core.editor 확인 방법
+git config --global core.editor 명령어 실행
+
+git core.editor 설정 명령어
+git config --global core.editor "code --wait"
+
 
 Git 명령어 목록입니다. 
 저장소 관련 명령어:

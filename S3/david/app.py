@@ -2,6 +2,7 @@ from flask import Flask, request, Response
 import os
 from io import BytesIO
 from gtts import gTTS #Python 패키지 관리자로 gTTS 패키지를 설치 명령어 pip install gTTS
+
 DEFAULT_LANG = os.getenv('DEFAULT_LANG', 'ko')
 app = Flask(__name__)
 
