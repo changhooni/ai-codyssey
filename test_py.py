@@ -45,7 +45,7 @@ def main():
         result = 1
     else:
         result = "Invalid operator"
-
+    # 여러 숫자를 등록할 때 처리 while문 사용
     while i < k:
         if operator == "+":
             result += num[i]
@@ -80,7 +80,19 @@ def main():
         result = "Invalid operator."
         
     result_msg(result)
-        
+
+    adf = input("숫자 연산자 숫자 연산자")
+
+    g = [str(t) for t in adf.split()]
+    gg = len(g)
+    ggg = 0
+    while ggg < gg:
+        if is_int_try(gg[ggg]):
+            if gg[ggg] % 2 == 0:
+                print(f"숫자 = {gg[ggg]}")
+        else:
+            print(f"연산자 = {gg[ggg]}")
+
 if __name__ == "__main__":
     main()
         
