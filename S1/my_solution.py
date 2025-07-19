@@ -1,5 +1,7 @@
 def hello()->str: #함수 지정
-   return "Hello"
+   txt = "Hello"
+   return txt
 
-print(hello()) #함수 불러오기
+print(type(hello())) #함수 불러오기
+print(hello())
     
